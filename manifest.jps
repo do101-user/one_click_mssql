@@ -1,5 +1,5 @@
 type: install
-name: MSSQL One Click Deployment
+name: MSSQL One Click VAP Deployment
 nodes:
   nodeType: apache2
   cloudlets: 16
@@ -7,5 +7,5 @@ nodes:
 onInstall:
   deploy:
     archive: http://app.demo.jelastic.com/HelloWorld.zip
-    name: Hello World
+    name: MSSQL One Click VAP Deployment
     context: ROOT
