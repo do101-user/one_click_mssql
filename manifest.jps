@@ -1,7 +1,5 @@
 type: install
-name: Hello World!
-engine: php5.4
-
+name: MSSQL One Click Deployment
 nodes:
   nodeType: apache2
   cloudlets: 16
