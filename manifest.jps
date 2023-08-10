@@ -6,7 +6,7 @@ settings:
       - caption: Password for the SA user 
         type: string
         name: MSSQL_SA_PASSWORD
-        default: Microsoft SQL SA Password
+        inputType: password
       - name: MSSQL_PID
         caption: Product ID of the version of SQL server you're installing
         type: string
@@ -23,5 +23,9 @@ description:
 logo: /images/mssql-logo.png
 
 onInstall:
-    cmd [*]: sh /scripts/install_mssql.sh
+    - installMssql
+actions: 
+    installMssql: 
+       cmd [*]: sh /scripts/install_mssql.sh
+
    
