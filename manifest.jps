@@ -1,7 +1,7 @@
 type: install
 version: '1.7.2'
 id: mssql-db
-baseUrl: https://raw.githubusercontent.com/do101-user/one_click_mssql/master
+baseUrl: https://raw.githubusercontent.com/do101-user/one_click_mssql/main/
 categories:
   - apps/dev-and-admin-tools
   - apps/clusters
