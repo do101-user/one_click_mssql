@@ -5,7 +5,6 @@ baseUrl: https://raw.githubusercontent.com/do101-user/one_click_mssql/main/
 categories:
   - apps/dev-and-admin-tools
   - apps/clusters
-  - apps/popular
 description:
   short: 'One Click Deployment Microsoft SQL DB on Linux'
 logo: /images/mssql-logo.png
@@ -42,7 +41,7 @@ onBeforeInit: |
 nodes:
 - count: 1
   cloudlets: 16
-  nodeType: Ubuntu
+  nodeType: apache2
   nodeGroup: vps
   displayName: Microsoft SQL Server Linux
 
