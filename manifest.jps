@@ -1,49 +1,13 @@
 type: install
-version: '1.5.2'
-id: mssql-db
-baseUrl: https://raw.githubusercontent.com/do101-user/one_click_mssql/main/
-categories:
-  - apps/dev-and-admin-tools
-  - apps/clusters
-description:
-  short: 'One Click Deployment Microsoft SQL DB on Linux'
-logo: /images/mssql-logo.png
-name:One Click Microsoft SQL DB on Linux
-settings:
-  mssql:
-    fields:
-      - name: MSSQL_SA_PASSWORD
-        caption: Password for the SA user 
-        type: string
-        default: Microsoft SQL SA Password
-      - name: MSSQL_PID
-        caption: Product ID of the version of SQL server you're installing
-        type: string
-        default: 'evaluation'
+name: Hello World!
+engine: php5.4
 
-onBeforeInit: |
-  var minCloudlets = 16;
-  var settings = jps.settings;
-  var fields = settings.main.fields;
-  var quotas = jelastic.billing.account.GetQuotas('environment.externalip.enabled' + ";" + 'environment.maxcloudletsperrec').array;
-  for (var i = 0; i < quotas.length; i++){
-    var q = quotas[i], n = toNative(q.quota.name);
-    if (n == 'environment.externalip.enabled' && !q.value) { fields.splice(0,1); };
-    if (n == 'environment.maxcloudletsperrec' && q.value < minCloudlets) {
-      fields.push(
-        {"type": "compositefield","height": 0,"hideLabel": true,"width": 0,"items": [{"height": 0,"type": "string","required": true}]}
-      );
-    };
-  }
-  return { result: 0, settings: settings };
-
-  
 nodes:
-- count: 1
-  cloudlets: 16
   nodeType: apache2
-  nodeGroup: vps
-  displayName: Microsoft SQL Server Linux
+  cloudlets: 16
 
-skipNodeEmails: true
-
+onInstall:
+  deploy:
+    archive: http://app.demo.jelastic.com/HelloWorld.zip
+    name: Hello World
+    context: ROOT
