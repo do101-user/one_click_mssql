@@ -1,5 +1,5 @@
 type: install
-name: MSSQL One Click VAP Deployment
+name: MSSQL One Click VAP Deployment ( Linux )
 baseUrl: https://raw.githubusercontent.com/do101-user/one_click_mssql/main/
 nodes:
   nodeType: Ubuntu22
