@@ -1,9 +1,11 @@
 type: install
 name: MSSQL One Click VAP Deployment
 baseUrl: https://raw.githubusercontent.com/do101-user/one_click_mssql/main/
+logo: /images/mssql-logo.png
 nodes:
   nodeType: apache2
   cloudlets: 16
+
 
 onInstall:
   deploy:
