@@ -1,6 +1,16 @@
 type: install
 name: MSSQL One Click VAP Deployment ( Linux )
 baseUrl: https://raw.githubusercontent.com/do101-user/one_click_mssql/main/
+settings:
+    fields:
+      - caption: Password for the SA user 
+        type: string
+        name: MSSQL_SA_PASSWORD
+        default: Microsoft SQL SA Password
+      - name: MSSQL_PID
+        caption: Product ID of the version of SQL server you're installing
+        type: string
+        default: 'evaluation'
 nodes:
   nodeType: Ubuntu22
   cloudlets: 16
