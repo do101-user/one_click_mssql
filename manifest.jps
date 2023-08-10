@@ -11,10 +11,10 @@ description:
   short: 'One Click Deployment Microsoft SQL DB on Linux'
 logo: /images/mssql-logo.png
 name:One Click Microsoft SQL DB on Linux
-#targetRegions:
-#  type: vz7
+targetRegions:
+  type: vz7
 settings:
-  smtp:
+  mssql:
     fields:
       - name: MSSQL_SA_PASSWORD
         caption: Password for the SA user (required)
