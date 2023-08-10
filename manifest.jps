@@ -11,15 +11,17 @@ settings:
         caption: Product ID of the version of SQL server you're installing
         type: string
         default: 'evaluation'
+      - caption: Enable SQL Agent (Recommended)
+        type: checkbox
+        name: SQL_ENABLE_AGENT
+        default: true
 nodes:
   nodeType: ubuntu20
-  cloudlets: 16
+  cloudlets: 22
 description: 
   text: "/texts/description.md?_r=1"
 logo: /images/mssql-logo.png
 
 onInstall:
-  deploy:
-    archive: http://app.demo.jelastic.com/HelloWorld.zip
-    name: MSSQL One Click VAP Deployment
-    context: ROOT
+    cmd [*]: sh /scripts/install_mssql.sh
+   

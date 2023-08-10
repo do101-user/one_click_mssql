@@ -3,15 +3,15 @@
 # Use the following variables to control your install:
 
 # Password for the SA user (required)
-#MSSQL_SA_PASSWORD='<YourStrong!Passw0rd>'
+MSSQL_SA_PASSWORD="${settings.MSSQL_SA_PASSWORD}"
 
 # Product ID of the version of SQL server you're installing
 # Must be evaluation, developer, express, web, standard, enterprise, or your 25 digit product key
 # Defaults to developer
-#MSSQL_PID='evaluation'
+MSSQL_PID="${settings.MSSQL_PID}"
 
 # Enable SQL Server Agent (recommended)
-#SQL_ENABLE_AGENT='y'
+SQL_ENABLE_AGENT="${settings.SQL_ENABLE_AGENT}"
 
 # Install SQL Server Full Text Search (optional)
 # SQL_INSTALL_FULLTEXT='y'
