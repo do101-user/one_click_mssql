@@ -1,5 +1,5 @@
 type: install
-version: '1.7.2'
+version: '1.5.2'
 id: mssql-db
 baseUrl: https://raw.githubusercontent.com/do101-user/one_click_mssql/main/
 categories:
@@ -7,7 +7,6 @@ categories:
   - apps/clusters
   - apps/popular
 description:
-  text: /text/description.md
   short: 'One Click Deployment Microsoft SQL DB on Linux'
 logo: /images/mssql-logo.png
 name:One Click Microsoft SQL DB on Linux
