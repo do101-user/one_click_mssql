@@ -12,7 +12,7 @@ settings:
         type: string
         default: 'evaluation'
 nodes:
-  nodeType: Ubuntu20
+  nodeType: ubuntu20
   cloudlets: 16
 description: 
   text: "/texts/description.md?_r=1"
