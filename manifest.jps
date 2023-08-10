@@ -26,7 +26,7 @@ settings:
         default: 'evaluation'
 
 onBeforeInit: |
-  var minCloudlets = 32;
+  var minCloudlets = 16;
   var settings = jps.settings;
   var fields = settings.main.fields;
   var quotas = jelastic.billing.account.GetQuotas('environment.externalip.enabled' + ";" + 'environment.maxcloudletsperrec').array;
@@ -41,31 +41,11 @@ onBeforeInit: |
   }
   return { result: 0, settings: settings };
 
-globals:
-  DB_USER: gitlab-${fn.password(5)}
-  DB_PASSWORD: ${fn.password(32)}
-  RUNNER_TOKEN: ${fn.password(32)}
-  GITLAB_SECRETS_BASE: ${fn.password(64)}
-  ROOT_PASSWORD: ${fn.password(16)}
-  HTTP_SECRET: ${fn.password(32)}
-  REPO_URL: https://github.com/jelastic/docker-gitlab.git
-  DEPLOY_HOOK: /root/deployLE.sh
-  UNDEPLOY_HOOK: /root/undeployLE.sh 
-  DEPLOY_HOOK_JS: https://raw.githubusercontent.com/jelastic-jps/gitlab/master/scripts/deployHook.js?_r=${fn.random}    
-  CERTS: /srv/docker/gitlab/certs
-  HTTPS_PORT: 443
-  SSH_PORT: 10022
-  REGISTRY_PORT: 5000
-  RUN_RUNNER: |-
-    docker run -d --privileged --name gitlab-runner --restart always \
-      -v /var/run/docker.sock:/var/run/docker.sock \
-      -v /srv/docker/gitlab-runner:/etc/gitlab-runner:shared \
-      gitlab/gitlab-runner &>> /var/log/run.log
   
 nodes:
 - count: 1
   cloudlets: 16
-  nodeType: ubuntu-vps: ubuntu22
+  nodeType: ubuntu22
   nodeGroup: vps
   displayName: Microsoft SQL Server (Linux)
   env:
