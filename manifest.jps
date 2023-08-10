@@ -15,11 +15,11 @@ settings:
   mssql:
     fields:
       - name: MSSQL_SA_PASSWORD
-        caption: Password for the SA user (required)
+        caption: Password for the SA user 
         type: string
         default: Microsoft SQL SA Password
       - name: MSSQL_PID
-        caption: Product ID of the version of SQL server you're installing (evaluation, developer, express, web, standard, enterprise, or your 25 digit product key Defaults to developer)
+        caption: Product ID of the version of SQL server you're installing
         type: string
         default: 'evaluation'
 
