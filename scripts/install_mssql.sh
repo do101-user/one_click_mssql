@@ -3,15 +3,15 @@
 # Use the following variables to control your install:
 
 # Password for the SA user (required)
-MSSQL_SA_PASSWORD="${settings.MSSQL_SA_PASSWORD}"
+#MSSQL_SA_PASSWORD="${settings.MSSQL_SA_PASSWORD}"
 
 # Product ID of the version of SQL server you're installing
 # Must be evaluation, developer, express, web, standard, enterprise, or your 25 digit product key
 # Defaults to developer
-MSSQL_PID="${settings.MSSQL_PID}"
+#MSSQL_PID="${settings.MSSQL_PID}"
 
 # Enable SQL Server Agent (recommended)
-SQL_ENABLE_AGENT="${settings.SQL_ENABLE_AGENT}"
+#SQL_ENABLE_AGENT="${settings.SQL_ENABLE_AGENT}"
 
 # Install SQL Server Full Text Search (optional)
 # SQL_INSTALL_FULLTEXT='y'
@@ -25,8 +25,8 @@ then
   echo Environment variable MSSQL_SA_PASSWORD must be set for unattended install
   exit 1
 fi
-echo installing -y ufw
-sudo apt-get install
+echo installing ufw
+sudo apt-get install -y ufw
 echo Adding Microsoft repositories...
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc
 repoargs="$(curl https://packages.microsoft.com/config/ubuntu/20.04/mssql-server-2019.list)"
