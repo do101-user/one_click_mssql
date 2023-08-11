@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 # Use the following variables to control your install:
-
+#
 # Password for the SA user (required)
 #MSSQL_SA_PASSWORD="${settings.MSSQL_SA_PASSWORD}"
 
