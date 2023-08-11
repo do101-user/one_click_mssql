@@ -57,7 +57,7 @@ echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
 source ~/.bashrc
 
 # Optional Enable SQL Server Agent:
-if [ ! -z $SQL_ENABLE_AGENT ]
+if [ ! -z $SQL_ENABLE_AGENT && $SQL_ENABLE_AGENT == "true" ]
 then
   echo Enabling SQL Server Agent...
   sudo /opt/mssql/bin/mssql-conf set sqlagent.enabled true
