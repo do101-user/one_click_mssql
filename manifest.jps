@@ -3,7 +3,7 @@ name: MSSQL One Click VAP Deployment ( Ubuntu )
 baseUrl: https://raw.githubusercontent.com/do101-user/one_click_mssql/main/
 settings:
     fields:
-      - caption: Password for the SA user 
+      - caption: Password for the SA user
         type: string
         name: MSSQL_SA_PASSWORD
         inputType: password
@@ -18,14 +18,20 @@ settings:
 nodes:
   nodeType: ubuntu20
   cloudlets: 22
-description: 
+description:
   text: "/texts/description.md?_r=1"
 logo: /images/mssql-logo.png
 
+skipNodeEmails: true
+
+globals:
+ MSSQL_SA_PASSWORD="${settings.MSSQL_SA_PASSWORD}"
+ MSSQL_PID="${settings.MSSQL_PID}"
+ SQL_ENABLE_AGENT="${settings.SQL_ENABLE_AGENT}"
+
 onInstall:
     - installMssql
-actions: 
-    installMssql: 
-       cmd [*]: sh /scripts/install_mssql.sh
-
-   
+actions:
+    installMssql:
+       cmd [*]: 
+         - curl -fsSL https://raw.githubusercontent.com/do101-user/one_click_mssql/main/scripts/install_mssql.sh | /bin/bash -s '${settings.MSSQL_SA_PASSWORD}' '${settings.MSSQL_PID}' '${settings.SQL_ENABLE_AGENT}' &> /tmp/mssql_install.log  
