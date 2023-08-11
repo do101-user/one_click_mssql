@@ -8,10 +8,10 @@ MSSQL_SA_PASSWORD="$1"
 # Product ID of the version of SQL server you're installing
 # Must be evaluation, developer, express, web, standard, enterprise, or your 25 digit product key
 # Defaults to developer
-#MSSQL_PID="$2"
+MSSQL_PID="$2"
 
 # Enable SQL Server Agent (recommended)
-#SQL_ENABLE_AGENT="$3"
+SQL_ENABLE_AGENT="$3"
 
 # Install SQL Server Full Text Search (optional)
 # SQL_INSTALL_FULLTEXT='y'
