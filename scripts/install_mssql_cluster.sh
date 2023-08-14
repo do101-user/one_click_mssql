@@ -31,7 +31,7 @@ echo installing  sqlcmd
 sudo  apt-get install -y sqlcmd 
 echo Adding Microsoft repositories...
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc
-repoargs="$(curl https://packages.microsoft.com/config/ubuntu/20.04/mssql-server-2022.list)"
+repoargs="$(curl https://packages.microsoft.com/config/ubuntu/20.04/mssql-server-2019.list)"
 sudo add-apt-repository "${repoargs}"
 repoargs="$(curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list)"
 sudo add-apt-repository "${repoargs}"
