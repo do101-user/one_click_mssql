@@ -7,6 +7,7 @@ settings:
         type: string
         name: MSSQL_SA_PASSWORD
         inputType: password
+        required: true
       - name: MSSQL_PID
         caption: Product ID of the version of SQL server you're installing
         type: string
